@@ -61,6 +61,13 @@ bool RF95Interface::init()
     digitalWrite(RF95_TCXO, 1);
 #endif
 
+// enable PA
+#ifdef RF95_PA_EN
+    #if defined(RF95_PA_DAC_EN)
+        dacWrite(RF95_PA_EN, RF95_PA_LEVEL);
+    #endif
+#endif
+
     /*
     #define RF95_TXEN (22) // If defined, this pin should be set high prior to transmit (controls an external analog switch)
     #define RF95_RXEN (23) // If defined, this pin should be set high prior to receive (controls an external analog switch)

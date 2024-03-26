@@ -64,8 +64,11 @@ class RadioLibRF95 : public SX1278
     /// For debugging
     uint8_t readReg(uint8_t addr);
 
+    int16_t setOutputPower(int8_t power);
+    int16_t setOutputPower(int8_t power, bool useRfo);
+
   protected:
     // since default current limit for SX126x/127x in updated RadioLib is 60mA
     // use the previous value
-    float currentLimit = 100;
+    float currentLimit = 150;
 };

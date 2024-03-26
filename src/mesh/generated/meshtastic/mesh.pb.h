@@ -141,6 +141,8 @@ typedef enum _meshtastic_HardwareModel {
     /* Heltec Wireless Tracker with ESP32-S3 CPU, built-in GPS, and TFT
  Older "V1.0" Variant */
     meshtastic_HardwareModel_HELTEC_WIRELESS_TRACKER_V1_0 = 58,
+	/* RadioMaster ExpressLRS "Bandit" TX Module 900MHz with ESP32-D0WDQ6 + SX1276 */
+    meshtastic_HardwareModel_RADIOMASTER_900_BANDIT_NANO = 59,
     /* ------------------------------------------------------------------------------------------------------------------------------------------
  Reserved ID For developing private Ports. These will show up in live traffic sparsely, so we can use a high number. Keep it within 8 bits.
  ------------------------------------------------------------------------------------------------------------------------------------------ */

@@ -123,6 +123,8 @@
 #define HW_VENDOR meshtastic_HardwareModel_NANO_G1_EXPLORER
 #elif defined(BETAFPV_900_TX_NANO)
 #define HW_VENDOR meshtastic_HardwareModel_BETAFPV_900_NANO_TX
+#elif defined(RADIOMASTER_900_BANDIT_NANO)
+#define HW_VENDOR meshtastic_HardwareModel_RADIOMASTER_900_BANDIT_NANO
 #elif defined(PICOMPUTER_S3)
 #define HW_VENDOR meshtastic_HardwareModel_PICOMPUTER_S3
 #elif defined(ESP32_S3_PICO)

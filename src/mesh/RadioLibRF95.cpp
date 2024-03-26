@@ -78,3 +78,20 @@ uint8_t RadioLibRF95::readReg(uint8_t addr)
     Module *mod = this->getMod();
     return mod->SPIreadRegister(addr);
 }
+
+int16_t RadioLibRF95::setOutputPower(int8_t power) {
+  return(RadioLibRF95::setOutputPower(power, false));
+}
+
+int16_t RadioLibRF95::setOutputPower(int8_t power, bool useRfo) {
+
+  // set mode to standby
+  int16_t state = SX127x::standby();
+  Module* mod = this->getMod();
+
+  state |= mod->SPIsetRegValue(RADIOLIB_SX127X_REG_PA_CONFIG, RADIOLIB_SX127X_PA_SELECT_BOOST, 7, 7);
+  state |= mod->SPIsetRegValue(RADIOLIB_SX127X_REG_PA_CONFIG, 140, 6, 0); // 1000mW
+  state |= mod->SPIsetRegValue(RADIOLIB_SX1278_REG_PA_DAC, RADIOLIB_SX127X_PA_BOOST_ON, 2, 0);
+
+  return(state);
+}
